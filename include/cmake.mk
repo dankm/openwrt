@@ -44,6 +44,7 @@ define Build/Configure/Default
 		CXXFLAGS="$(TARGET_CXXFLAGS) $(EXTRA_CXXFLAGS)" \
 		LDFLAGS="$(TARGET_LDFLAGS) $(EXTRA_LDFLAGS)" \
 		cmake \
+			-G "Unix Makefiles" \
 			-DCMAKE_SYSTEM_NAME=Linux \
 			-DCMAKE_SYSTEM_VERSION=1 \
 			-DCMAKE_SYSTEM_PROCESSOR=$(ARCH) \
@@ -89,6 +90,7 @@ define Host/Configure/Default
 		CXXFLAGS="$(HOST_CFLAGS)" \
 		LDFLAGS="$(HOST_LDFLAGS)" \
 		cmake \
+			-G "Unix Makefiles" \
 			-DCMAKE_BUILD_TYPE=Release \
 			-DCMAKE_C_FLAGS_RELEASE="-DNDEBUG" \
 			-DCMAKE_CXX_FLAGS_RELEASE="-DNDEBUG" \
